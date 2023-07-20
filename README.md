@@ -1,8 +1,8 @@
 # top_bot
-Hi!
+Ciao!
 
-You will find all the functions for the your chatbot in the bot_logic file
+Tutte le funzioni del chatbot si trovano nel file bot_logic.
 
-The settings file contains a dictionary with all the settings for the bot
+Il file settings contiene un dizionario con tutte le impostazioni del bot.
 
-The bot itself should be created in the main.py file
+Il bot stesso dovrebbe essere creato nel file main.py
