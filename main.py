@@ -1,29 +1,29 @@
 from settings import settings
 import discord
-# import * - is a quick way to import all files in the library
+# import * - è un modo rapido per importare tutti i file della libreria.
 from bot_logic import *
 
-# The intents variable stores the bot's priviliges
+# La variabile intents memorizza i privilegi del bot
 intents = discord.Intents.default()
-# Enabling the message-reading privelege
+# Abilitazione del privilegio di lettura dei messaggi
 intents.message_content = True
-# Creating a bot in the client variable and transferring it the priveleges
+# Creare un bot nella variabile client e trasferirgli i privilegi
 client = discord.Client(intents=intents)
 
 
-# Once the bot is ready, it will print its name!
+# Una volta che il bot è pronto, stamperà il suo nome!
 @client.event
 async def on_ready():
-    print(f'We have logged in as {client.user}')
+    print(f'Abbiamo effettuato l'accesso come {client.user}')
 
 
-# When the bot receives a message, it will send messages in the same channel!
+# Quando il bot riceve un messaggio, invia messaggi nello stesso canale!
 @client.event
 async def on_message(message):
     if message.author == client.user:
         return
     if message.content.startswith('$hello'):
-        await message.channel.send('Hi! I am a bot!')
+        await message.channel.send('Ciao! Sono un bot!')
     elif message.content.startswith('$smile'):
         await message.channel.send(gen_emodji())
     elif message.content.startswith('$coin'):
@@ -31,6 +31,6 @@ async def on_message(message):
     elif message.content.startswith('$pass'):
         await message.channel.send(gen_pass(10))
     else:
-        await message.channel.send("Can't process this command, sorry!")
+        await message.channel.send("Non è possibile elaborare questo comando, mi dispiace!")
 
 client.run(settings["TOKEN"])
