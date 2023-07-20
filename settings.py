@@ -1,4 +1,4 @@
 settings = {
     "prefix": ">",
-    "TOKEN": "THE TOKEN WILL BE STORED HERE"
+    "TOKEN": "IL TOKEN SARÀ MEMORIZZATO QUI"
 }
